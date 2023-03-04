@@ -1,0 +1,19 @@
+.searchInputs {
+  margin-left: 350px;
+  margin-top: 105px;
+  display: flex;
+  gap: 30px;
+  padding: 15px;
+}
+
+.srch {
+  background-color: rgba(128, 128, 128, 0.97);
+  border: 0;
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 15px;
+  height: 30px;
+  width: 600px;
+}

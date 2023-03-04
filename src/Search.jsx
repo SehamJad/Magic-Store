@@ -5,13 +5,21 @@ import dataproducts from "./data.json";
 function SearchProducts() {
   const jdata = dataproducts.dataproducts;
   const [filteredProducts, setFilteredproducts] = useState("");
-
+  const searchWord = "";
   const [wordEntered, setWordEntered] = useState("");
   //create function to filter the data  that similar to the input data from the user in the search from user
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     // create anew array
+  };
+  //create a function to clear the input in the fields and fron the filtredproducts
+  /* const clearInput = () => {
+      setFilteredproducts([]);
+      setWordEntered("");
+    };*/
+  const handleClick = (e) => {
+    e.preventDefault(); // not to reload the page when click enter
     const newFilter = jdata.filter((value) => {
       return (value.name && value.description)
         .toLowerCase()
@@ -23,18 +31,6 @@ function SearchProducts() {
     } else {
       setFilteredproducts(newFilter);
     }
-  };
-  //create a function to clear the input in the fields and fron the filtredproducts
-  /* const clearInput = () => {
-      setFilteredproducts([]);
-      setWordEntered("");
-    };*/
-  const handleClick = (e) => {
-    e.preventDefault(); // not to reload the page when click enter
-    if (filteredProducts > 0) {
-    }
-
-    console.log("The link was clicked.");
   };
 
   return (
@@ -61,4 +57,5 @@ function SearchProducts() {
     </div>
   );
 }
+
 export default SearchProducts;
